@@ -1,3 +1,4 @@
+from lens_sensor_simulator.BaseProcessor import BaseProcessor
 class Lens(BaseProcessor):
     """Lens class for image processing.
 
@@ -6,7 +7,7 @@ class Lens(BaseProcessor):
         width (int): The width of the lens.
     """
 
-    def __init__(self, height, width):
+    def __init__(self, height=None, width=None):
         """Initialize Lens.
 
         Args:
@@ -34,6 +35,16 @@ class Lens(BaseProcessor):
     @width.setter
     def width(self, value):
         self._width = value
+
+    def set_dimensions(self, height, width):
+        """Set the height and width of the lens.
+
+        Args:
+            height (int): The height of the lens.
+            width (int): The width of the lens.
+        """
+        self._height = height
+        self._width = width
 
     def process(self, image):
         """Validate the shape of the input numpy data and return it.

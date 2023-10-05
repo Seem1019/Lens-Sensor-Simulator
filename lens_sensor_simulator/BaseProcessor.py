@@ -26,6 +26,19 @@ class BaseProcessor(ABC):
     def enable(self, value):
         self._enable = value
 
+    def _validate_image(self, image: np.ndarray) -> None:
+        """
+        Validates the input image to ensure it is a 2D numpy array
+
+        Args:
+            image (ndarray): The image to validate
+
+        Raises:
+            ValueError: If the image is not a 2D numpy array
+        """
+        if not isinstance(image, np.ndarray) or image.ndim != 2:
+            raise ValueError("Image must be a 2D numpy array")
+
     @abstractmethod
     def process(self, image):
         """Process the input 2D numpy data and return output 2D numpy data.
