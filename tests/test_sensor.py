@@ -55,6 +55,14 @@ def test_process_correct():
     sensor = Sensor()
     gain = 2
     sensor.gain = gain
-    image = np.ones((10, 20))
+    image = np.ones((10, 10))
     output = sensor.process(image)
     assert np.array_equal(output, image * gain) == True
+
+def test_process_incorrect_shape():
+    sensor = Sensor()
+    gain = 2
+    sensor.gain = gain
+    image = np.ones((10, 20))  
+    with pytest.raises(ValueError):
+        output = sensor.process(image)

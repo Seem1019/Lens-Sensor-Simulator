@@ -62,3 +62,11 @@ class Lens(BaseProcessor):
             return image
         else:
             raise ValueError('Shape mismatch')
+        
+    def lens_decorator(LensObj):
+        def wrapper(func):
+            def inner_wrapper(*args, **kwargs):
+                image = func(*args, **kwargs)
+                return LensObj.process(image)
+            return inner_wrapper
+        return wrapper

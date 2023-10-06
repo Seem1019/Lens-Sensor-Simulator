@@ -6,12 +6,13 @@ with open('requirements.txt', 'r') as f:
 
 setup(
     name='camera-simulator',
-    version='0.3',
+    version='0.4',
     packages=find_packages(),
     install_requires=requirements,
     entry_points={
         'console_scripts': [
             'camera-simulator=lens_sensor_simulator:main',
+            'pysensor=lens_sensor_simulator.Main:main',
         ],
     },
 )

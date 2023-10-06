@@ -20,10 +20,26 @@ lens\_sensor\_simulator.Lens module
    :undoc-members:
    :show-inheritance:
 
+lens\_sensor\_simulator.Main module
+-----------------------------------
+
+.. automodule:: lens_sensor_simulator.Main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 lens\_sensor\_simulator.Sensor module
 -------------------------------------
 
 .. automodule:: lens_sensor_simulator.Sensor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+lens\_sensor\_simulator.Utilities module
+----------------------------------------
+
+.. automodule:: lens_sensor_simulator.Utilities
    :members:
    :undoc-members:
    :show-inheritance:
