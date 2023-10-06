@@ -5,13 +5,13 @@ with open('requirements.txt', 'r') as f:
     requirements = f.read().splitlines()
 
 setup(
-    name='Lens-Sensor-Simulator',
-    version='0.2',
+    name='camera-simulator',
+    version='0.3',
     packages=find_packages(),
     install_requires=requirements,
     entry_points={
         'console_scripts': [
-            'lens_sensor_simulator=lens_sensor_simulator:main',
+            'camera-simulator=lens_sensor_simulator:main',
         ],
     },
 )
