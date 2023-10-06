@@ -1,4 +1,5 @@
 from lens_sensor_simulator.BaseProcessor import BaseProcessor
+from lens_sensor_simulator.Lens import Lens
 class Sensor(BaseProcessor):
     """Sensor class for image processing.
 
@@ -15,6 +16,16 @@ class Sensor(BaseProcessor):
         super().__init__()
         self._gain = gain
 
+    def __iter__(self):
+        self.index = 0
+        return self
+    
+    def __next__(self):
+        if self.index < 10:
+            self.index += 1
+            return self.process(np.ones((10, 10)) + self.index)
+        else:
+            raise StopIteration
     @property
     def gain(self):
         """int: Get or set the gain of the sensor."""
@@ -30,7 +41,7 @@ class Sensor(BaseProcessor):
         if not self.gain:
             raise ValueError("A sensor gain must be defined")
 
-
+    @Lens.lens_decorator(Lens(height=10, width=10))
     def process(self, image):
         """Multiply the input numpy data by the gain and return it.
 

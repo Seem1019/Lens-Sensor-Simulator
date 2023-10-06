@@ -9,16 +9,19 @@
 project = 'camera-simulator'
 copyright = '2023, Steven Espinoza'
 author = 'Steven Espinoza'
-release = '0.2'
+release = '0.4'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-# Add napoleon to the extensions list
+
+
 extensions = ['sphinx.ext.napoleon']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+
+
 
 
 

@@ -51,7 +51,3 @@ class BaseProcessor(ABC):
         """
         pass
 
-# Advanced Python Features
-# TODO: Implement Lens decorator for Sensors
-# TODO: Allow the Sensor to be used as an iterator of 10 elements
-# TODO: Implement the 'mymean' function
